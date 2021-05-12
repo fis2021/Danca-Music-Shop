@@ -24,7 +24,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 
-
 public class PrintAlbums extends Application {
 	
 public static void printAlbums(GridPane gridPane) {
