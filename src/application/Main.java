@@ -8,6 +8,7 @@ public class Main {
 
 		UserSession.userName = "";
         UserSession.userType = "";
+        
 		FirstSession firstsession = new FirstSession();	
 		firstsession.launchFirstSession();
 		
