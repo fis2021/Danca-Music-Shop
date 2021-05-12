@@ -28,7 +28,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 
-
 public class AddComment extends Application {
 
 	static String customerName = "dan";
