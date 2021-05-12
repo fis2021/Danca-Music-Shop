@@ -32,46 +32,41 @@ public class AddAlbum extends Application {
 	
 	/// insert albums in the data base
 public static void insertAlbum(String name, String artist, String price) {
-		
-		JSONArray jsonArray = new JSONArray();
-		JSONParser parser = new JSONParser();
-		
-		try(Reader reader = new FileReader("albums.json"))
-		{
-			jsonArray = (JSONArray) parser.parse(reader);
-					
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (org.json.simple.parser.ParseException e) {
-			e.printStackTrace();
-		}
-		
-		JSONObject obj = new JSONObject();
-		obj.put("name", name);
-		obj.put("artist", artist);
-		obj.put("price", price);
-		
-		JSONObject album = new JSONObject();
-		album.put("album", obj);
-		
-		jsonArray.add(album);
-		
-		try(FileWriter file = new FileWriter("albums.json"))
-		{
-			file.write(jsonArray.toJSONString());
-			file.flush();
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		
-		System.out.println(obj);
-		
-	}
-	
+
+    JSONArray jsonArray = new JSONArray();
+    JSONParser parser = new JSONParser();
+
+    try (Reader reader = new FileReader("albums.json")) {
+        jsonArray = (JSONArray) parser.parse(reader);
+
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (org.json.simple.parser.ParseException e) {
+        e.printStackTrace();
+    }
+
+    JSONObject obj = new JSONObject();
+    obj.put("name", name);
+    obj.put("artist", artist);
+    obj.put("price", price);
+
+    JSONObject album = new JSONObject();
+    album.put("album", obj);
+
+    jsonArray.add(album);
+
+    try (FileWriter file = new FileWriter("albums.json")) {
+        file.write(jsonArray.toJSONString());
+        file.flush();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    System.out.println(obj);
+
+}
 	
     @Override
     public void start(Stage primaryStage) throws Exception {
