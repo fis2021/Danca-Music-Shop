@@ -142,6 +142,14 @@ public static void insertAlbum(String name, String artist, String price) {
         priceField.setPrefHeight(40);
         gridPane.add(priceField, 1, 2);
         
+	// Add Submit Button
+        Button submitButton = new Button("Submit");
+        submitButton.setPrefHeight(40);
+        submitButton.setDefaultButton(true);
+        submitButton.setPrefWidth(100);
+        gridPane.add(submitButton, 0, 10, 2, 1);
+        GridPane.setHalignment(submitButton, HPos.CENTER);
+        GridPane.setMargin(submitButton, new Insets(20, 0,20,0));
 
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
