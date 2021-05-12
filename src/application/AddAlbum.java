@@ -166,7 +166,7 @@ public static void insertAlbum(String name, String artist, String price) {
                 /// insert albums to database
                 	insertAlbum(nameField.getText(), artistName, priceField.getText());  
                 	
-               
+                showAlert(Alert.AlertType.INFORMATION, gridPane.getScene().getWindow(), "Succes!", "Album : " + nameField.getText() + " added!");
                 
             }
         });
