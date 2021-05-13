@@ -100,7 +100,7 @@ public static void printAlbums(GridPane gridPane) {
             	i++;
             	id=String.valueOf(id1);
 	
-			
+		// Show a status message	
 			buyButton.setOnAction(new EventHandler<ActionEvent>() {
 	            @Override
 	            public void handle(ActionEvent event) {                          
