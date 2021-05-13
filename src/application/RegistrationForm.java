@@ -73,7 +73,7 @@ public static void insertUser(String username, String password, String type) {
 		
 	}
 	
-	/// checks for username availability
+	// checks for username availability
 
 public static boolean found = false;
 
