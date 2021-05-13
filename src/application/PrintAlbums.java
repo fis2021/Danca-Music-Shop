@@ -24,6 +24,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 
+
 public class PrintAlbums extends Application {
 	
 public static void printAlbums(GridPane gridPane) {
@@ -82,6 +83,7 @@ public static void printAlbums(GridPane gridPane) {
             	Label priceLabel = new Label("$"+readPrice);
             	gridPane.add(priceLabel, 2, i);
             	
+		// create buy button
             	Button buyButton = new Button("Buy");
             	
             	
