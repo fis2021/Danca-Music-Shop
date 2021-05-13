@@ -30,7 +30,7 @@ import org.json.simple.parser.JSONParser;
 
 public class RegistrationForm extends Application {
 
-
+// create register form
 	/// insert users in the data base
 public static void insertUser(String username, String password, String type) {
 		
