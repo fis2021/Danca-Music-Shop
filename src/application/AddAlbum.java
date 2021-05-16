@@ -159,6 +159,7 @@ public static void insertAlbum(String name, String artist, String price) {
         GridPane.setMargin(submitButton, new Insets(20, 0,20,0));
 
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
+        	// display a status message
             @Override
             public void handle(ActionEvent event) {
                 if(nameField.getText().isEmpty()) {
