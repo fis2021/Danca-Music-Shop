@@ -74,6 +74,7 @@ public class ShopPage extends Application {
         GridPane.setHalignment(seeAlbumsButton, HPos.LEFT);
         GridPane.setMargin(seeAlbumsButton, new Insets(40, 0,40,0));
         
+        // Specific button
         // Add Customer Button
         Button addAlbumButton = new Button("Add Album");
         addAlbumButton.setPrefHeight(40);
