@@ -25,48 +25,53 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 
-
+// edit content
 public class AddAlbum extends Application {
 
 	static String artistName = UserSession.userName;
 	
 	/// insert albums in the data base
 public static void insertAlbum(String name, String artist, String price) {
-
-    JSONArray jsonArray = new JSONArray();
-    JSONParser parser = new JSONParser();
-
-    try (Reader reader = new FileReader("albums.json")) {
-        jsonArray = (JSONArray) parser.parse(reader);
-
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
-    } catch (IOException e) {
-        e.printStackTrace();
-    } catch (org.json.simple.parser.ParseException e) {
-        e.printStackTrace();
-    }
-
-    JSONObject obj = new JSONObject();
-    obj.put("name", name);
-    obj.put("artist", artist);
-    obj.put("price", price);
-
-    JSONObject album = new JSONObject();
-    album.put("album", obj);
-
-    jsonArray.add(album);
-
-    try (FileWriter file = new FileWriter("albums.json")) {
-        file.write(jsonArray.toJSONString());
-        file.flush();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-
-    System.out.println(obj);
-
-}
+		
+		JSONArray jsonArray = new JSONArray();
+		JSONParser parser = new JSONParser();
+		
+		try(Reader reader = new FileReader("albums.json"))
+		{
+			jsonArray = (JSONArray) parser.parse(reader);
+					
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (org.json.simple.parser.ParseException e) {
+			e.printStackTrace();
+		}
+		
+		JSONObject obj = new JSONObject();
+		obj.put("name", name);
+		obj.put("artist", artist);
+		obj.put("price", price);
+		
+		JSONObject album = new JSONObject();
+		album.put("album", obj);
+		
+		jsonArray.add(album);
+		
+		try(FileWriter file = new FileWriter("albums.json"))
+		{
+			file.write(jsonArray.toJSONString());
+			file.flush();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		
+		System.out.println(obj);
+		
+	}
+	
 	
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -116,6 +121,7 @@ public static void insertAlbum(String name, String artist, String price) {
         return gridPane;
     }
 
+    // create a form
     private void addUIControls(GridPane gridPane) {
         // Add Header
         Label headerLabel = new Label("Add an Album");
@@ -142,7 +148,8 @@ public static void insertAlbum(String name, String artist, String price) {
         priceField.setPrefHeight(40);
         gridPane.add(priceField, 1, 2);
         
-	// Add Submit Button
+        
+        // Add Submit Button
         Button submitButton = new Button("Submit");
         submitButton.setPrefHeight(40);
         submitButton.setDefaultButton(true);
@@ -166,7 +173,7 @@ public static void insertAlbum(String name, String artist, String price) {
                 /// insert albums to database
                 	insertAlbum(nameField.getText(), artistName, priceField.getText());  
                 	
-                showAlert(Alert.AlertType.INFORMATION, gridPane.getScene().getWindow(), "Succes!", "Album : " + nameField.getText() + " added!");
+                showAlert(Alert.AlertType.INFORMATION, gridPane.getScene().getWindow(), "Succes!", "Album " + nameField.getText() + " added!");
                 
             }
         });
